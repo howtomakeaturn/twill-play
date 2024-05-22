@@ -3,30 +3,31 @@
 namespace App\Models;
 
 use A17\Twill\Models\Behaviors\HasBlocks;
-use A17\Twill\Models\Behaviors\HasTranslation;
-use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use A17\Twill\Models\Behaviors\HasSlug;
+use A17\Twill\Models\Behaviors\HasTranslation;
 use A17\Twill\Models\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Page extends Model 
+class Page extends Model
 {
-    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasRevisions, HasFactory;
+    use HasBlocks, HasFactory, HasMedias, HasRevisions, HasSlug, HasTranslation;
 
     protected $fillable = [
         'published',
         'title',
         'description',
+        'notes',
     ];
-    
+
     public $translatedAttributes = [
         'title',
         'description',
+        'notes',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
 }

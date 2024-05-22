@@ -10,6 +10,8 @@
     {{ $item->title }}
     <br />
     {{ $item->description }}
+    <br />
+    {{ $item->notes }}
 </div>
 </body>
 </html>

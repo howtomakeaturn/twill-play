@@ -33,6 +33,10 @@ class PageController extends BaseModuleController
             Input::make()->name('description')->label('Description')->translatable()
         );
 
+        $form->add(
+            Input::make()->name('notes')->label('Notes')->type('textarea')->translatable()
+        );
+
         return $form;
     }
 
