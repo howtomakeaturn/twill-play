@@ -21,12 +21,22 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        TwillNavigation::addLink(
-            NavigationLink::make()->forModule('pages')
-        );
+        // TwillNavigation::addLink(
+        //     NavigationLink::make()->forModule('pages')
+        // );
+
+        // TwillNavigation::addLink(
+        //     NavigationLink::make()->forModule('offices')
+        // );
 
         TwillNavigation::addLink(
-            NavigationLink::make()->forModule('offices')
+            NavigationLink::make()->forModule('pages')
+                ->title('About')
+                ->doNotAddSelfAsFirstChild()
+                ->setChildren([
+                    NavigationLink::make()->forModule('pages'),
+                    NavigationLink::make()->forModule('offices'),
+                ])
         );
     }
 }
