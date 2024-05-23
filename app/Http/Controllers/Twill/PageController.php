@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Twill;
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 use A17\Twill\Models\Contracts\TwillModelContract;
 use A17\Twill\Services\Forms\Fields\Input;
+use A17\Twill\Services\Forms\Fields\Select;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Services\Listings\Columns\Text;
 use A17\Twill\Services\Listings\TableColumns;
+use App\Models\Office;
 
 class PageController extends BaseModuleController
 {
@@ -35,6 +37,16 @@ class PageController extends BaseModuleController
 
         $form->add(
             Input::make()->name('notes')->label('Notes')->type('textarea')->translatable()
+        );
+
+        $form->add(
+            Select::make()->name('office_id')->label('Office')
+                ->options(Office::all()->map(function (Office $office) {
+                    return [
+                        'value' => $office->id,
+                        'label' => $office->title,
+                    ];
+                })->toArray())
         );
 
         return $form;

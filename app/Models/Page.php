@@ -20,6 +20,7 @@ class Page extends Model
         'title',
         'description',
         'notes',
+        'office_id',
     ];
 
     public $translatedAttributes = [
