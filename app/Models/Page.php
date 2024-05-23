@@ -9,6 +9,7 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasTranslation;
 use A17\Twill\Models\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Page extends Model
 {
@@ -30,4 +31,9 @@ class Page extends Model
     public $slugAttributes = [
         'title',
     ];
+
+    public function office(): BelongsTo
+    {
+        return $this->belongsTo(Office::class);
+    }
 }

@@ -15,6 +15,6 @@ class OfficeDisplayController extends Controller
             abort(404);
         }
 
-        return view('site.page', ['item' => $office]);
+        return view('site.office', ['item' => $office]);
     }
 }

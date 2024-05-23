@@ -10,6 +10,8 @@
     {{ $item->title }}
     <br />
     {{ $item->description }}
+    <hr />
+    pages count: {{ $item->pages->count() }}
 </div>
 </body>
 </html>

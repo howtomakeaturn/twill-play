@@ -12,6 +12,8 @@
     {{ $item->description }}
     <br />
     {{ $item->notes }}
+    <hr />
+    by office: {{ $item->office->title }}
 </div>
 </body>
 </html>
