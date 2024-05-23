@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('pages/{slug}', [\App\Http\Controllers\PageDisplayController::class, 'show'])->name('frontend.page');
+
+Route::get('offices/{slug}', [\App\Http\Controllers\OfficeDisplayController::class, 'show'])->name('frontend.office');
