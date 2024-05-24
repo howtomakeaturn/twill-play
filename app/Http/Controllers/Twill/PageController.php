@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Twill;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 use A17\Twill\Models\Contracts\TwillModelContract;
+use A17\Twill\Services\Forms\Fields\BlockEditor;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Fields\Select;
 use A17\Twill\Services\Forms\Form;
@@ -47,6 +48,10 @@ class PageController extends BaseModuleController
                         'label' => $office->title,
                     ];
                 })->toArray())
+        );
+
+        $form->add(
+            BlockEditor::make()
         );
 
         return $form;
